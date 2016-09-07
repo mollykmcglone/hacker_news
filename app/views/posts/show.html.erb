@@ -19,7 +19,7 @@
   <li>
     <p><%= comment.author %>, <%= comment.created_at %></p>
     <p><%= comment.content %></p>
-    <%= link_to "Delete", post_comment_path(@post, comment),
+    <%= link_to "Delete comment", post_comment_path(@post, comment),
                                  :data => {:confirm => "Are you sure?",
                                                 :method => "delete"} %>
   </li>
