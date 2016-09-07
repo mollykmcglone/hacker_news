@@ -6,6 +6,10 @@
   <%= form_for @post do |f| %> <%= f.hidden_field(:votes, :value => @post.votes + 1) %> <%= f.submit "Vote" %> <% end %>
 </p>
 
+<hr>
+
+<p><%= link_to "Add a comment", new_post_comment_path(@post) %></p>
+
 
 <h3>Comments:</h3>
 <% if @post.comments.any? %>
