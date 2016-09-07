@@ -1,10 +1,10 @@
 <h1>Posts</h1>
 
-<ul>
+<ol>
   <% @posts.each do |post| %>
   <li>
     <h3><%= link_to post.title, "http://#{post.link}" %>-(<%= link_to post.link, "http://#{post.link}" %>)</h3>
     <p><%= link_to "Edit", edit_post_path(post) %> | <%= link_to "Delete", post_path(post), :data => {:confirm => "Are you sure?", :method => 'delete'} %> | Votes: <%= post.votes %> <%= form_for post do |f| %> <%= f.hidden_field(:votes, :value => post.votes + 1) %> <%= f.submit "Vote" %> <% end %> </p>
   </li>
   <% end %>
-</ul>
+</ol>

@@ -9,4 +9,11 @@ describe "the edit a post process" do
     click_on 'Update Post'
     expect(page).to have_content 'This is a really great post'
   end
+
+  it "updates votes" do
+    post = Post.create({:title => "This is a post", :link => "www.google.com", :votes => 0})
+    visit posts_path
+    click_on 'Vote'
+    expect(page).to have_content 'Votes: 1'
+  end
 end
