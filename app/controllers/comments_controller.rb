@@ -12,6 +12,7 @@ class CommentsController < ApplicationController
       flash[:notice] = "Comment successfully added!"
       redirect_to post_path(@comment.post)
     else
+      flash[:alert] = "Comment not added. Try again!"
       render :new
     end
   end

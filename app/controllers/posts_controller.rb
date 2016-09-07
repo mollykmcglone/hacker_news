@@ -15,6 +15,7 @@ class PostsController < ApplicationController
       flash[:notice] = "Post successfully added!"
       redirect_to posts_path
     else
+      flash[:alert] = "Post not added. Try again!"
       render :new
     end
   end
@@ -29,6 +30,7 @@ class PostsController < ApplicationController
       flash[:notice] = "Post successfully updated!"
       redirect_to posts_path
     else
+      flash[:alert] = "Post not updated. Try again!"
       render :edit
     end
   end
