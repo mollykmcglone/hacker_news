@@ -31,11 +31,12 @@
 </div><!-- /.navbar-collapse -->
 </div>
 </nav>
-<div class="flash">
+<div class="flash_alert">
   <%= flash[:alert] %>
+</div>
+<div class="flash_notice">
   <%= flash[:notice] %>
 </div>
-
     <%= yield %>
   </body>
 </html>
