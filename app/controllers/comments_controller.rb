@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new(comment_params)
     if @comment.save
+      flash[:notice] = "Comment successfully added!"
       redirect_to post_path(@comment.post)
     else
       render :new
@@ -18,6 +19,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
+    flash[:notice] = "Comment successfully deleted!"
     redirect_to post_path(@comment.post)
   end
 
