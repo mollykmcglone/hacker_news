@@ -1,4 +1,7 @@
 class CommentsController < ApplicationController
+  def index
+    @comments = Comment.all
+  end
 
   def new
     @post = Post.find(params[:post_id])
